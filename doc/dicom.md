@@ -1,6 +1,11 @@
 
-dicom样例
+
+
+
+## dicom样例
+
 [dicom说明](https://blog.csdn.net/inter_peng/article/details/46513847)
+
 ```shell
 (0008, 0005) Specific Character Set              CS: 'ISO_IR 100'
 (0008, 0008) Image Type                          CS: ['ORIGINAL', 'PRIMARY', 'AXIAL', 'CT_SOM5 SPI']
@@ -165,3 +170,31 @@ dicom样例
    ---------
 (7fe0, 0010) Pixel Data                          OW: Array of 524288 bytes
 ```
+
+
+
+## 常见属性
+
+> - PixelData - 存储了dicom中图像信息(原始二进制文件)
+> - PixelSpacing - 每个像素点实际的长度与宽度,单位(mm)
+> - SliceThickness - 每层切片的厚度,单位(mm)
+> - SliceLocation - 读取的dicom文件所在的Z轴位置。
+>    PS：如果是一个case的文件夹，可以通过这个meta信息对该case的切片进行排序。
+> - Rows - 该dicom数据的长度
+> - Columns - 该dicom数据的宽度
+
+
+
+
+
+```shell
+PixelSpacing:['0.931640625', '0.931640625'] 
+SliceThickness:1.5 
+SliceLocation:-231.5
+ImagePositionPatient:['-227.0341796875', '-369.0341796875', '-231.5'] 
+Columns:512 
+Rows:512 
+```
+
+
+
