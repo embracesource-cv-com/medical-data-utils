@@ -1,6 +1,6 @@
 
 
-
+[TOC]
 
 ## dicom样例
 
@@ -197,4 +197,15 @@ Rows:512
 ```
 
 
+
+## 处理过程
+
+### 图像获取
+
+  像素转换为HU单元（CT值），计算公式为：Hu=pixel_val*rescale_slope+rescale_intercept；
+
+```python
+dcm.image = dcm.pixel_array * dcm.RescaleSlope + dcm.RescaleIntercept
+dcm.image
+```
 
